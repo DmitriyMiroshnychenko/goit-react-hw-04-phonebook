@@ -19,7 +19,9 @@ export function ContactForm({ onSubmit }) {
     }
 
     if (name === 'number') {
-      setNumber(value);
+      // Remove non-digit characters from the input value
+      const formattedValue = value.replace(/\D/g, '');
+      setNumber(formattedValue);
     }
   }
 
@@ -54,8 +56,8 @@ export function ContactForm({ onSubmit }) {
           placeholder="number"
           value={number}
           autoComplete="off"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          pattern="[0-9]*"
+          title="Phone number must contain only digits."
           required
           onChange={handleInputChange}
         />
