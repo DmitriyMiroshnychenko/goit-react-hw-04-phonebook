@@ -1,0 +1,87 @@
+.ContactsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eab71d;
+}
+
+.ContactsItem:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.ContactsItem-contact svg {
+  margin-right: 5px;
+}
+
+.ContactsItem-icon {
+  width: 20px;
+  height: 20px;
+  color: #1c78ce;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ContactsItem-contact--name {
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+.ContactsItem-contact--name,
+.ContactsItem-contact--number {
+  display: flex;
+  align-items: center;
+}
+
+.DeleteBtn {
+  position: relative;
+  margin-left: 10px;
+  padding: 0;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00509d;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.DeleteBtn:hover svg {
+  fill: #74a6af;
+}
+
+.DeleteBtn::before {
+  content: 'Delete';
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  width: fit-content;
+  height: 20px;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background-color: #453e88;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%);
+  border-radius: 5px;
+  pointer-events: none;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.DeleteBtn:hover::before {
+  opacity: 1;
+}
